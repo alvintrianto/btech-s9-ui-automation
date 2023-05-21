@@ -8,7 +8,8 @@ import io.cucumber.junit.Cucumber;
 @CucumberOptions(features = "src/main/resources/Features/",
                 glue = "StepDefinitions",
                 monochrome = true,
-                tags = "@All"
+                tags = "@All",
+                plugin = {"html:target/report.html"}
 )
 
 public class runTest {

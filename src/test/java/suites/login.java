@@ -30,6 +30,7 @@ public class login {
         //click element
         driver.findElement(By.xpath("//*[contains(text(),'login')]")).click();
 
+
         //get error message
         driver.findElement(By.xpath("//*[contains(text(),'\"password\" is not allowed to be empty')]")).isDisplayed();
 
