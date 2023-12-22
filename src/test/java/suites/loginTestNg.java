@@ -1,9 +1,11 @@
 package suites;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -15,9 +17,16 @@ public class loginTestNg {
     @Test
     public void loginByTestNg() throws InterruptedException {
         //Defining and locate chrome driver location
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\alvin\\IdeaProjects\\BtechS9-UIAutomation\\src\\main\\resources\\driver\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+
+        WebDriver driver;
+
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+
+
 
         //Base URL
         String baseUrl = "https://kasirdemo.belajarqa.com/";
