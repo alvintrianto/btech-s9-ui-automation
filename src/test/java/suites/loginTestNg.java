@@ -43,6 +43,7 @@ public class loginTestNg {
 
         //Get Element Email & Input data
         driver.findElement(By.id("email")).sendKeys("contoh@gmail.com");
+        driver.findElement(By.id("password")).sendKeys("1234314");
 
         //click element
         driver.findElement(By.xpath("//*[contains(text(),'login')]")).click();
